@@ -15,7 +15,6 @@ object SpotifyTrackModule {
   private val spotifyTrackAPI = spotifyAPIRetrofit.create(SpotifyTrackAPI::class.java)
   private val spotifyToSongResolver: SpotifyToSongResolver = JsonToSongResolver()
 
-
   val spotifyTrackService: SpotifyTrackService = SpotifyTrackServiceImpl(
     spotifyTrackAPI,
     SpotifyAuthModule.spotifyAccountService,
