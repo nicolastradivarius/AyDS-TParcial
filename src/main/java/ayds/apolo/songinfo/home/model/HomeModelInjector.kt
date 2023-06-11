@@ -1,6 +1,6 @@
 package ayds.apolo.songinfo.home.model
 
-import ayds.apolo.songinfo.home.model.repository.SongRepository
+import ayds.apolo.songinfo.home.model.repository.SongRepositoryImpl
 import ayds.apolo.songinfo.home.model.repository.external.SongBrokerImpl
 import ayds.apolo.songinfo.home.model.repository.external.spotify.SpotifyModule
 import ayds.apolo.songinfo.home.model.repository.external.wikipedia.WikipediaInjector
@@ -23,7 +23,7 @@ object HomeModelInjector {
 
   private val songBroker = SongBrokerImpl(spotifyTrackService, wikipediaTrackService)
 
-  private val repository: SongRepository = SongRepository(cache, localStorage, songBroker)
+  private val repository: SongRepositoryImpl = SongRepositoryImpl(cache, localStorage, songBroker)
 
   val homeModel: HomeModel = HomeModelImpl(repository)
 }

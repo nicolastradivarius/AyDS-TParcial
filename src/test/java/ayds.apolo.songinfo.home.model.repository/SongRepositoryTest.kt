@@ -12,7 +12,8 @@ import org.junit.Test
 class SongRepositoryTest {
 
     private val songRepository by lazy {
-        SongRepository()
+        //ver si la puedo obtener del injector
+        //SongRepositoryImpl()
     }
 
     @Test

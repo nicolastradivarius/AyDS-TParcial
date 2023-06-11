@@ -6,13 +6,17 @@ import ayds.apolo.songinfo.home.model.repository.external.SongBroker
 import ayds.apolo.songinfo.home.model.repository.local.spotify.SpotifyLocalStorage
 import ayds.apolo.songinfo.home.model.repository.local.spotify.cache.SongCache
 
-internal class SongRepository (
+interface SongRepository {
+    fun getSongByTerm(term: String): Song
+}
+
+internal class SongRepositoryImpl (
     private var cache: SongCache,
     private var localStorage: SpotifyLocalStorage,
     private var songBroker: SongBroker
-) {
+): SongRepository {
 
-    fun getSongByTerm(term: String): Song {
+    override fun getSongByTerm(term: String): Song {
 
         // check in the cache
         var song = localStorage.getSongByTerm(term)
