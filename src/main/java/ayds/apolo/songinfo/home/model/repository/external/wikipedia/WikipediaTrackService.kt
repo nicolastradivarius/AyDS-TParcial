@@ -1,7 +1,6 @@
 package ayds.apolo.songinfo.home.model.repository.external.wikipedia
 
 import ayds.apolo.songinfo.home.model.entities.SpotifySong
-import ayds.apolo.songinfo.home.model.repository.WikipediaAPI
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import retrofit2.Response

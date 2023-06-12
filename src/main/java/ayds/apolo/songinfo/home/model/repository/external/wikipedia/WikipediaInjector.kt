@@ -1,6 +1,5 @@
 package ayds.apolo.songinfo.home.model.repository.external.wikipedia
 
-import ayds.apolo.songinfo.home.model.repository.WikipediaAPI
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
