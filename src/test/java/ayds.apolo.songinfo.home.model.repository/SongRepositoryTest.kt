@@ -11,7 +11,6 @@ import io.mockk.verify
 import org.junit.Assert.*
 import org.junit.Test
 
-
 class SongRepositoryTest {
 
     private val spotifyCache: SongCache = mockk(relaxUnitFun = true)
@@ -32,7 +31,7 @@ class SongRepositoryTest {
         val result = songRepository.getSongByTerm("term")
 
         assertEquals(song, result)
-        //comprobamos que la cancion este marcada como cacheada
+        //comprobamos que la canción este marcada como cacheada
         assertTrue(song.isCacheStored)
     }
 
@@ -46,7 +45,7 @@ class SongRepositoryTest {
         val result = songRepository.getSongByTerm("term")
 
         assertEquals(song, result)
-        //comprobamos que la canon esté marcada como localmente guardada
+        //comprobamos que la canción esté marcada como localmente guardada
         assertTrue(song.isLocallyStored)
     }
 
@@ -74,7 +73,7 @@ class SongRepositoryTest {
         //comprobamos que la cancion NO se haya marcado como guardada
         assertFalse(song.isCacheStored)
         assertFalse(song.isLocallyStored)
-        //verificamos que se haya llamado a insertar la cancion en la cache y LS
+        //verificamos que se haya llamado a la funcion de insertar la cancion en la cache y LS
         verify { spotifyCache.insertSong("term", song) }
         verify { spotifyLocalStorage.insertSong("term", song) }
     }

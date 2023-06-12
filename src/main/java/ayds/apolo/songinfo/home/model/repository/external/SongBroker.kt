@@ -19,9 +19,6 @@ internal class SongBrokerImpl(
         if (song == null) {
             /// Last chance, get anything from the wiki
             song = wikipediaService.getSong(term)
-            if (song != null) {
-                return song
-            }
         }
 
         return song
