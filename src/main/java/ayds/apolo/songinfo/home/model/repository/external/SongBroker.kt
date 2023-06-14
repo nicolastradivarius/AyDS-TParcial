@@ -26,7 +26,7 @@ internal class SongBrokerImpl(
 
     /*
     Este método es la implementación de la función de búsqueda del parcial del 12-06-23 que debería ir en el broker.
-     */
+    */
     @Suppress("unused")
     private fun getArticleDoubleSource(term: String): String {
         val spotifyArticle = spotifyService.getSong(term)
