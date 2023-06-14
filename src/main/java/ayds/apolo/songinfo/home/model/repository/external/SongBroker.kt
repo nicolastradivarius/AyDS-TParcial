@@ -23,4 +23,31 @@ internal class SongBrokerImpl(
 
         return song
     }
+
+    /*
+    Este método es la implementación de la función de búsqueda del parcial del 12-06-23 que debería ir en el broker.
+     */
+    @Suppress("unused")
+    private fun getArticleDoubleSource(term: String): String {
+        val spotifyArticle = spotifyService.getSong(term)
+        val wikipediaArticle = wikipediaService.getSong(term)
+
+        val hasSpotifyInfo = spotifyArticle != null
+        val hasWikipediaInfo = wikipediaArticle != null
+
+        return when {
+            hasSpotifyInfo && hasWikipediaInfo -> {
+                "First source: $spotifyArticle\nSecond source: $wikipediaArticle"
+            }
+            hasSpotifyInfo -> {
+                "Single source: $spotifyArticle (Spotify)"
+            }
+            hasWikipediaInfo -> {
+                "Single source: $wikipediaArticle (Wikipedia)"
+            }
+            else -> {
+                ""
+            }
+        }
+    }
 }
